@@ -131,6 +131,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+django_on_heroku.settings(locals())
+
 #############################################################
 # SRC: https://devcenter.heroku.com/articles/django-assets
 
@@ -148,4 +150,3 @@ STATICFILES_DIRS = (
 #############################################################
 #############################################################
 
-django_on_heroku.settings(locals())
