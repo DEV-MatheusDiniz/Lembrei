@@ -1,0 +1,123 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %} 
+
+<!-- Element injected in the BODY element -->
+{% block body_class %} sidebar-mini {% endblock body_class %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ ASSETS_ROOT }}/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ ASSETS_ROOT }}/css/adminlte.min.css">
+
+{% endblock stylesheets %}
+
+{% block content %}  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Lembretes</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Projects</li> -->
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 20%">
+                          Titulo
+                      </th>
+                      <th style="width: 30%">
+                          Descrição
+                      </th>
+                      <th style="width: 8%" class="text-center">
+                          Status
+                      </th>
+                      <th style="width: 20%" class="text-right">
+                        <a class="btn btn-success btn-sm" href="{% url 'addLembrete' %}">
+                            <i class="fas fa-plus"></i>
+                            Adicionar
+                        </a>
+                      </th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                {% for lembrete in lembretes %}
+                  <tr>
+                      <td>
+                          <a>{{ lembrete.titulo }}</a>  
+                      </td>
+                      <td>
+                          <a>{{ lembrete.descricao }}</a>
+                      </td>
+                      <td class="project-state">
+                          {% if lembrete.status == 1 %}
+                            <span class="badge badge-success">Concluido</span>
+                          {% endif %}
+                          {% if lembrete.status == 0 %}
+                            <span class="badge badge-danger">Pendente</span>
+                          {% endif %}
+                      </td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-info btn-sm" href="{% url 'altLembrete' lembrete.id %}">
+                              <i class="fas fa-pencil-alt"></i>
+                              Editar
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="{% url 'delLembrete' lembrete.id %}">
+                              <i class="fas fa-trash"></i>
+                              Deletar
+                          </a>
+                      </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <!-- jQuery -->
+  <script src="{{ ASSETS_ROOT }}/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="{{ ASSETS_ROOT }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="{{ ASSETS_ROOT }}/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{{ ASSETS_ROOT }}/js/demo.js"></script>
+
+{% endblock javascripts %}
