@@ -1,1 +1,1 @@
-web: gunicorn DJANGO-ADMINLITE-MASTER.wsgi
+web: gunicorn core.wsgi --log-file -
