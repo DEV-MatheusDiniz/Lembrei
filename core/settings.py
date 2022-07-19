@@ -4,7 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 import os, environ
-import django_heroku
+import django_on_heroku
 
 env = environ.Env(
     # set casting, default value
@@ -28,8 +28,8 @@ DEBUG = env('DEBUG')
 ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
 
 # load production server from .env
-ALLOWED_HOSTS        = ['*' ]
-CSRF_TRUSTED_ORIGINS = ['*' ]
+ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1',               env('SERVER', default='127.0.0.1') ]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + env('SERVER', default='127.0.0.1') ]
 
 # Application definition
 
@@ -148,4 +148,4 @@ STATICFILES_DIRS = (
 #############################################################
 #############################################################
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
