@@ -38,7 +38,7 @@
             {% if msg %}
                 {{ msg | safe }}
             {% else %}
-                Add your credentials
+                Login
             {% endif %}
         </p>
 
@@ -62,18 +62,18 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-8">
+          <div class="row text-center">
+            <!-- <div class="col-8">
               <div class="icheck-primary">
                 <input type="checkbox" id="remember">
                 <label for="remember">
                   Remember Me
                 </label>
               </div>
-            </div>
+            </div> -->
             <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
+            <div class="col-4 align-self-center mx-auto">
+              <button type="submit" name="login" class="btn btn-primary btn-block">Entrar</button>
             </div>
             <!-- /.col -->
           </div>
@@ -82,13 +82,12 @@
         <br /><br />
 
         <div class="text-center">
-            Not a member? <a href="{% url 'register' %}" class="text-center">Register</a>
+            Não possui conta? <a href="{% url 'register' %}" class="text-center">Register</a>
             <br />
             <br />
-            &copy; ColorLib 
-            <a target="_blank" rel="noopener noreferrer"
-               href="https://appseed.us/admin-dashboards/django-dashboard-adminlte"><b>Admin</b>LTE</a> 
-            - coded by <a target="_blank" rel="noopener noreferrer" href="https://appseed.us">AppSeed</a>.
+            &copy; Lembrei 
+            <a target="_blank" rel="noopener noreferrer" href="https://appseed.us/admin-dashboards/django-dashboard-adminlte">
+            - coded by <a target="_blank" rel="noopener noreferrer" href="#">Diniz</a>.
         </div>
 
       </div>

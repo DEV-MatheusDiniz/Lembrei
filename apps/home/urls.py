@@ -4,7 +4,7 @@ from apps.home import views
 
 urlpatterns = [
     # The home page
-    path('', views.index, name='home'),
+    path('', views.index, name='lembretes'),
     path('addLembrete', views.addLembrete, name='addLembrete'),
     path('altLembrete/<int:id>', views.altLembrete, name='altLembrete'),
     path('delLembrete/<int:id>', views.delLembrete, name='delLembrete'),

@@ -24,7 +24,8 @@
   <div class="register-box">
 
     <div class="login-logo">
-        <a target="_blank" rel="noopener noreferrer">
+        <a target="_blank" rel="noopener noreferrer" 
+>
            <span class="nav-icon fas fa-lightbulb"></span>
            Lembrei
           </a>
@@ -37,7 +38,7 @@
                 <span class="text-danger">{{ msg | safe }}</span>
             {% else %}
             <span>
-                Add your credentials
+              Cadastro
             </span>
             {% endif %}            
         </p>
@@ -87,17 +88,17 @@
           <span class="text-error">{{ form.password2.errors }}</span>
           
           <div class="row">
-            <div class="col-8">
+            <!-- <div class="col-8">
               <div class="icheck-primary">
                 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                 <label for="agreeTerms">
                 I agree to the <a href="#">terms</a>
                 </label>
               </div>
-            </div>
+            </div> -->
             <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" name="register" class="btn btn-primary btn-block">Register</button>
+            <div class="col-4 align-self-center mx-auto">
+              <button type="submit" name="register" class="btn btn-primary btn-block">Cadastrar</button>
             </div>
             <!-- /.col -->
           </div>
@@ -105,13 +106,12 @@
 
         <br />
         <div class="text-center">
-            Have an account? <a href="{% url 'login' %}" class="text-center">Login</a>
+            Já possui conta? <a href="{% url 'login' %}" class="text-center">Login</a>
             <br />
             <br />
-            &copy; ColorLib 
-            <a target="_blank" rel="noopener noreferrer"
-               href="https://appseed.us/admin-dashboards/django-dashboard-adminlte"><b>Admin</b>LTE</a> 
-            - coded by <a target="_blank" rel="noopener noreferrer" href="https://appseed.us">AppSeed</a>.
+            &copy; Lembrei 
+            <a target="_blank" rel="noopener noreferrer" href="https://appseed.us/admin-dashboards/django-dashboard-adminlte">
+            - coded by <a target="_blank" rel="noopener noreferrer" href="#">Diniz</a>.
         </div>
 
       </div>
