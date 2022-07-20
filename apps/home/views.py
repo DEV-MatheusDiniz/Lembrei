@@ -25,7 +25,7 @@ def addLembrete(request):
         form = form.save(commit=False)
         form.id_user = request.user
         form.save()
-        return redirect('home')
+        return redirect('lembretes')
     html_template = loader.get_template('index/addLembrete.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -37,7 +37,7 @@ def altLembrete(request, id):
     context = {'segment': 'index', 'form': form}
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('lembretes')
     html_template = loader.get_template('index/altLembrete.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -48,7 +48,7 @@ def delLembrete(request, id):
     context = {'segment': 'index', 'lembrete': lembrete}
     if request.method == 'POST':
         lembrete.delete()
-        return redirect('home')
+        return redirect('lembretes')
     html_template = loader.get_template('index/delLembrete.html')
     return HttpResponse(html_template.render(context, request))
 
